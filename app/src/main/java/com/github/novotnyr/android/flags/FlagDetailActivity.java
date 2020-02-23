@@ -23,6 +23,7 @@ public class FlagDetailActivity extends AppCompatActivity {
         if (flag == null) {
             return;
         }
+        setTitle(flag.getCountry());
         flagImageView = findViewById(R.id.flagImageView);
         flagImageView.setImageResource(flag.getResource());
     }

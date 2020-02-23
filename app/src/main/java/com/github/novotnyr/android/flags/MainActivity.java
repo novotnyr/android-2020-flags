@@ -1,7 +1,7 @@
 package com.github.novotnyr.android.flags;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements FlagOnClickListen
 
     @Override
     public void onFlagClick(Flag flag) {
-        Toast.makeText(this, "Clicked on " + flag, Toast.LENGTH_SHORT);
+        Intent showFlagIntent = new Intent(this, FlagDetailActivity.class);
+        showFlagIntent.putExtra("flag", flag);
+        startActivity(showFlagIntent);
     }
 }

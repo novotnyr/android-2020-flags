@@ -1,10 +1,11 @@
 package com.github.novotnyr.android.flags;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import androidx.annotation.DrawableRes;
 
-public class Flag {
+public class Flag implements Serializable {
     private String country;
     @DrawableRes
     private int resource;

@@ -12,6 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class FlagAdapter extends RecyclerView.Adapter<FlagViewHolder> {
     private List<Flag> flags = new ArrayList<>();
+    private FlagOnClickListener flagOnClickListener;
+
+    public FlagAdapter(FlagOnClickListener flagOnClickListener) {
+        this.flagOnClickListener = flagOnClickListener;
+    }
 
     @NonNull
     @Override
@@ -24,7 +29,7 @@ public class FlagAdapter extends RecyclerView.Adapter<FlagViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull FlagViewHolder holder, int position) {
-        holder.bind(flags.get(position));
+        holder.bind(flags.get(position), flagOnClickListener);
     }
 
     @Override

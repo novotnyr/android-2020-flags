@@ -13,8 +13,14 @@ public class FlagViewHolder extends RecyclerView.ViewHolder {
         textView = layout.findViewById(android.R.id.text1);
     }
 
-    public void bind(final Flag flag) {
-        this.textView.setText(flag.getCountry());
+    public void bind(final Flag flag, final FlagOnClickListener flagOnClickListener) {
+        textView.setText(flag.getCountry());
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flagOnClickListener.onFlagClick(flag);
+            }
+        });
     }
 }
 

@@ -21,6 +21,13 @@ public class FlagViewHolder extends RecyclerView.ViewHolder {
                 flagOnClickListener.onFlagClick(flag);
             }
         });
+        textView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                flagOnClickListener.onFlagLongClick(flag);
+                return true;
+            }
+        });
     }
 }
 

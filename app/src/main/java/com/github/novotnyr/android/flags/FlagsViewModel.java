@@ -30,4 +30,10 @@ public class FlagsViewModel extends ViewModel {
     public MutableLiveData<List<Flag>> getFlags() {
         return flagsLiveData;
     }
+
+    public void remove(Flag flag) {
+        List<Flag> newFlags = new ArrayList<>(flagsLiveData.getValue());
+        newFlags.remove(flag);
+        flagsLiveData.postValue(newFlags);
+    }
 }

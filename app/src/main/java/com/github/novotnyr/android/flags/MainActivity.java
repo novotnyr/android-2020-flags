@@ -43,4 +43,9 @@ public class MainActivity extends AppCompatActivity implements FlagOnClickListen
         showFlagIntent.putExtra("flag", flag);
         startActivity(showFlagIntent);
     }
+
+    @Override
+    public void onFlagLongClick(Flag flag) {
+        flagsViewModel.remove(flag);
+    }
 }

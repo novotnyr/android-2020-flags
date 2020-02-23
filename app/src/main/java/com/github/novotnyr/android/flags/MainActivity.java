@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements FlagOnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final FlagAdapter flagAdapter = new FlagAdapter(this);
+        final FlagListAdapter flagAdapter = new FlagListAdapter(this);
 
         flagsRecyclerView = findViewById(R.id.flagsRecyclerView);
         flagsRecyclerView.setAdapter(flagAdapter);
